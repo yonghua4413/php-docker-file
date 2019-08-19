@@ -61,9 +61,9 @@ RUN cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf &
     ln -sf /usr/share/zoneinfo/${TIME_ZOME} /etc/localtime
 
 #添加到环境变量
-RUN ln -s /usr/local/php/bin/php /usr/bin/php \
-    ln -s /usr/local/php/bin/phpize /usr/bin/phpize \
-    ln -s /usr/local/php/sbin/php-fpm /usr/bin/php-fpm
+RUN ln -s /usr/local/php/bin/php /usr/bin/php && \
+    ln -s /usr/local/php/bin/phpize /usr/bin/phpize && \
+    ln -s /usr/local/php/sbin/php-fpm /usr/bin/
 
 RUN rm -rf /opt/php* && yum clean all
 WORKDIR /usr/local/php/
