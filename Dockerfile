@@ -56,7 +56,7 @@ RUN cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf &
     cp /usr/local/php/etc/php-fpm.d/www.conf.default /usr/local/php/etc/php-fpm.d/www.conf && \
     cp /opt/php-${PHP_VERSION}/php.ini-production /usr/local/php/etc/php.ini && \
     sed -i 's/127.0.0.1/0.0.0.0/g' /usr/local/php/etc/php-fpm.conf && \
-    sed -i "s/;daemonize = yes/daemonize=no" /usr/local/php/etc/php-fpm.conf && \
+    sed -i 's/;daemonize = yes/daemonize=no/g' /usr/local/php/etc/php-fpm.conf && \
     echo "${TIME_ZOME}" > /etc/timezone && \
     ln -sf /usr/share/zoneinfo/${TIME_ZOME} /etc/localtime
 
